@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Khyathi Vardhan Inturi - Resume</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 40px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    h1, h2 {
+      color: #005a9c;
+    }
+    .section {
+      margin-bottom: 25px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>INTURI KHYATHI VARDHAN</h1>
+  <p><strong>Email:</strong> <a href="mailto:k.inturi7@vikes.csuohio.edu">k.inturi7@vikes.csuohio.edu</a></p>
+  <p><strong>LinkedIn:</strong> in/Khyathi Vardhan Inturi</p>
+  <p><strong>Phone:</strong> +1 (216) 374-3871</p>
+  <p><strong>Location:</strong> Cleveland, OH</p>
+
+  <div class="section">
+    <h2>Career Objective</h2>
+    <p>An amateur engineer, seeking an opportunity to work in an esteemed organization where I can help in the progression of the company as well as improve my technical knowledge and become part of the organization's growth.</p>
+  </div>
+
+  <div class="section">
+    <h2>Projects</h2>
+    <h3>Uber Data Analysis</h3>
+    <ul>
+      <li>Used NYC TLC datasets to analyze Uber bookings in NYC.</li>
+      <li>Analyzed data using Python libraries: Pandas, NumPy, Matplotlib, and Seaborn.</li>
+      <li>Found trends for highest pickups by hour and day.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Education</h2>
+    <p><strong>Masters in Computer Science (MiS)</strong><br>
+    Cleveland State University<br>
+    Expected May 2025</p>
+    
+    <p><strong>Bachelors of Technology (Computer Science)</strong><br>
+    Vellore Institute of Technology, AP, Amaravathi, India<br>
+    May 2022</p>
+  </div>
+
+  <div class="section">
+    <h2>Skills and Languages</h2>
+    <ul>
+      <li>Microsoft Office (Outlook, Word, Excel, PowerPoint)</li>
+      <li>Python, SQL, Py-Spark, Power-BI, Data-Bricks, MySQL, Hive, Kafka, Azure Data Factory</li>
+      <li>Machine Learning, Big Data, Data Analytics, AWS, GCP, Azure, Big Query, Git, GitHub</li>
+      <li>Fluent in English, Russian, and Kazakh</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Certifications</h2>
+    <ul>
+      <li>Certified in Python by Code Tantra</li>
+      <li>DevOps - Continuous Integration and Delivery by Infosys</li>
+      <li>Cybersecurity Essentials by Cisco</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Interests and Activities</h2>
+    <p>Trading, Tech-Enthusiast</p>
+  </div>
+
+</body>
+</html>
