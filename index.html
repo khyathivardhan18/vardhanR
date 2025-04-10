@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Batmobile</title>
+  <title>Batmobile Display</title>
   <style>
     body {
       background-color: #111;
@@ -13,74 +13,16 @@
       margin: 0;
     }
 
-    .batmobile {
-      position: relative;
-      width: 300px;
-      height: 100px;
-      background: linear-gradient(to right, #222, #000);
-      border-radius: 50px 50px 20px 20px;
-    }
-
-    .cockpit {
-      position: absolute;
-      top: 10px;
-      left: 100px;
-      width: 100px;
-      height: 50px;
-      background: #333;
-      border-radius: 50px 50px 0 0;
-      z-index: 2;
-    }
-
-    .fin {
-      position: absolute;
-      top: -10px;
-      left: 130px;
-      width: 40px;
-      height: 30px;
-      background: #444;
-      clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
-      z-index: 3;
-    }
-
-    .wheel {
-      position: absolute;
-      bottom: -20px;
-      width: 40px;
-      height: 40px;
-      background: #000;
-      border: 4px solid #444;
-      border-radius: 50%;
-    }
-
-    .wheel.left {
-      left: 30px;
-    }
-
-    .wheel.right {
-      right: 30px;
-    }
-
-    .bat-logo {
-      position: absolute;
-      top: 35px;
-      left: 130px;
-      width: 40px;
-      height: 30px;
-      background: url('https://static1.pocketlintimages.com/wordpress/wp-content/uploads/151360-cars-news-feature-batmobiles-down-the-ages-check-out-batmans-best-ever-vehicles-image15-fjmk81gzh7.jpg');
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
+    .batmobile-img {
+      max-width: 90%;
+      height: auto;
+      border: 5px solid #222;
+      border-radius: 20px;
+      box-shadow: 0 0 20px #000;
     }
   </style>
 </head>
 <body>
-  <div class="batmobile">
-    <div class="cockpit"></div>
-    <div class="fin"></div>
-    <div class="bat-logo"></div>
-    <div class="wheel left"></div>
-    <div class="wheel right"></div>
-  </div>
+  <img class="batmobile-img" src="https://static1.pocketlintimages.com/wordpress/wp-content/uploads/151360-cars-news-feature-batmobiles-down-the-ages-check-out-batmans-best-ever-vehicles-image15-fjmk81gzh7.jpg" alt="Batmobile">
 </body>
 </html>
