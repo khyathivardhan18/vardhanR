@@ -1,35 +1,580 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Akash Edit Tribute</title>
-  <style>
-    body {
-      background-color: #000;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
-
-    .image-container {
-      max-width: 90%;
-      border: 4px solid #fff;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-    }
-
-    img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khyathi Vardhan Inturi | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom CSS for animations and effects */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .project-card {
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #3B82F6;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .active-nav::after {
+            width: 100%;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #3B82F6;
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2563EB;
+        }
+        
+        .skill-badge {
+            display: inline-block;
+            background-color: #EFF6FF;
+            color: #1E40AF;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            margin: 0.25rem;
+        }
+    </style>
 </head>
-<body>
-  <div class="image-container">
-    <img src="Akash Edit-Thumbnail.jpg?v=2" alt="Akash Edit Tribute">
-  </div>
+<body class="bg-gray-50 font-sans text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-sm z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold text-blue-500">Khyathi Vardhan Inturi</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link active-nav">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+                <button id="mobile-menu-button" class="md:hidden text-gray-600">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-2 px-4 shadow-lg">
+            <div class="flex flex-col space-y-3">
+                <a href="#home" class="nav-link active-nav py-2">Home</a>
+                <a href="#about" class="nav-link py-2">About</a>
+                <a href="#skills" class="nav-link py-2">Skills</a>
+                <a href="#projects" class="nav-link py-2">Projects</a>
+                <a href="#contact" class="nav-link py-2">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center pt-20">
+        <div class="container mx-auto px-6 py-20">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0 animate-fade-in">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4">Hi, I'm <span class="text-blue-500">Khyathi Vardhan Inturi</span></h1>
+                    <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-gray-600">Data Engineer & Analyst</h2>
+                    <p class="text-lg mb-8 text-gray-600 max-w-lg">I build robust data pipelines, analyze complex datasets, and create insightful visualizations to drive data-driven decisions.</p>
+                    <div class="flex space-x-4">
+                        <a href="#projects" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition duration-300">View Work</a>
+                        <a href="#contact" class="border-2 border-blue-500 text-blue-500 hover:bg-blue-50 px-6 py-3 rounded-lg font-medium transition duration-300">Contact Me</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 animate-fade-in delay-200">
+                    <div class="relative">
+                        <div class="w-64 h-64 md:w-80 md:h-80 bg-blue-100 rounded-full mx-auto"></div>
+                        <div class="absolute -bottom-4 -right-4 bg-white p-4 rounded-lg shadow-lg">
+                            <div class="flex items-center">
+                                <div class="bg-blue-500 text-white p-3 rounded-full">
+                                    <i class="fas fa-database text-xl"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="font-bold">4+ Years</p>
+                                    <p class="text-sm text-gray-500">Experience</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16 animate-fade-in">About <span class="text-blue-500">Me</span></h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 mb-10 md:mb-0 animate-fade-in delay-100">
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <div class="w-full h-64 bg-blue-100 rounded-lg mb-4"></div>
+                        <h3 class="text-xl font-semibold mb-2">Khyathi Vardhan Inturi</h3>
+                        <p class="text-gray-600 mb-4">Data Engineer & Analyst</p>
+                        <div class="flex space-x-4">
+                            <a href="https://github.com/Khyathi-inturi" target="_blank" class="text-blue-500 hover:text-blue-600"><i class="fab fa-github text-2xl"></i></a>
+                            <a href="https://linkedin.com/in/khyathi-inturi" target="_blank" class="text-blue-500 hover:text-blue-600"><i class="fab fa-linkedin text-2xl"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-2/3 md:pl-12 animate-fade-in delay-200">
+                    <h3 class="text-2xl font-semibold mb-6">Who am I?</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        I'm a passionate Data Engineer and Analyst with expertise in building scalable data pipelines, performing complex data analysis, 
+                        and creating insightful visualizations. I specialize in Python, SQL, AWS services, and data visualization tools like Power BI and Tableau.
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        My journey in data engineering started during my undergraduate studies, and since then I've worked on various projects involving 
+                        ETL pipelines, machine learning models, and cloud-based data solutions. I'm currently pursuing my Master's in Information Systems 
+                        at Cleveland State University to further enhance my skills.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-lg shadow">
+                            <div class="flex items-center mb-3">
+                                <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                    <i class="fas fa-graduation-cap text-blue-500"></i>
+                                </div>
+                                <h4 class="font-semibold">Education</h4>
+                            </div>
+                            <div class="space-y-4">
+                                <div>
+                                    <p class="font-medium">Master of Science, Information Systems</p>
+                                    <p class="text-gray-600 text-sm">Cleveland State University, OH (Aug 2023 – May 2025)</p>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Bachelor of Technology, Computer Science</p>
+                                    <p class="text-gray-600 text-sm">Vellore Institute of Technology, IND (Apr 2018 – Jul 2022)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow">
+                            <div class="flex items-center mb-3">
+                                <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                    <i class="fas fa-certificate text-blue-500"></i>
+                                </div>
+                                <h4 class="font-semibold">Certifications</h4>
+                            </div>
+                            <div class="space-y-2">
+                                <p class="text-gray-600 text-sm">AWS Certified Data Engineer Associate</p>
+                                <p class="text-gray-600 text-sm">Oracle Cloud Infrastructure 2023 Certified Foundations Associate</p>
+                                <p class="text-gray-600 text-sm">HakerRank-5-Star (Advance Level Exam Certified)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16 animate-fade-in">My <span class="text-blue-500">Skills</span></h2>
+            
+            <!-- Technical Skills -->
+            <div class="mb-12 animate-fade-in delay-100">
+                <h3 class="text-2xl font-semibold mb-6 text-center">Technical Skills</h3>
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <div class="flex flex-wrap justify-center">
+                        <span class="skill-badge">Python</span>
+                        <span class="skill-badge">MySQL</span>
+                        <span class="skill-badge">Tableau</span>
+                        <span class="skill-badge">Power BI</span>
+                        <span class="skill-badge">Pandas</span>
+                        <span class="skill-badge">NumPy</span>
+                        <span class="skill-badge">MS Excel</span>
+                        <span class="skill-badge">MongoDB</span>
+                        <span class="skill-badge">Docker</span>
+                        <span class="skill-badge">AWS</span>
+                        <span class="skill-badge">Data Modeling</span>
+                        <span class="skill-badge">Data Visualization</span>
+                        <span class="skill-badge">Airflow</span>
+                        <span class="skill-badge">Scikit-learn</span>
+                        <span class="skill-badge">PyTorch</span>
+                        <span class="skill-badge">TensorFlow</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- AWS Services -->
+            <div class="mb-12 animate-fade-in delay-200">
+                <h3 class="text-2xl font-semibold mb-6 text-center">AWS Services</h3>
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <div class="flex flex-wrap justify-center">
+                        <span class="skill-badge">S3</span>
+                        <span class="skill-badge">Lambda</span>
+                        <span class="skill-badge">Glue</span>
+                        <span class="skill-badge">Athena</span>
+                        <span class="skill-badge">Redshift</span>
+                        <span class="skill-badge">EC2</span>
+                        <span class="skill-badge">QuickSight</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Databases -->
+            <div class="mb-12 animate-fade-in delay-300">
+                <h3 class="text-2xl font-semibold mb-6 text-center">Databases</h3>
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <div class="flex flex-wrap justify-center">
+                        <span class="skill-badge">MySQL</span>
+                        <span class="skill-badge">AWS Redshift</span>
+                        <span class="skill-badge">MongoDB</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Development Proficiencies -->
+            <div class="animate-fade-in delay-400">
+                <h3 class="text-2xl font-semibold mb-6 text-center">Development Proficiencies</h3>
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <div class="flex flex-wrap justify-center">
+                        <span class="skill-badge">Data Analysis</span>
+                        <span class="skill-badge">Machine Learning</span>
+                        <span class="skill-badge">Feature Engineering</span>
+                        <span class="skill-badge">Statistical Analysis</span>
+                        <span class="skill-badge">ETL Pipelines</span>
+                        <span class="skill-badge">Data Cleaning</span>
+                        <span class="skill-badge">Big Data Integration</span>
+                        <span class="skill-badge">Dashboard Development</span>
+                        <span class="skill-badge">CI/CD</span>
+                        <span class="skill-badge">Agile Development</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16 animate-fade-in">My <span class="text-blue-500">Projects</span></h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-lg animate-fade-in delay-100">
+                    <div class="h-48 bg-blue-100"></div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-semibold">JobSphere Inc – Enterprise SQL Database</h3>
+                            <div class="flex space-x-2">
+                                <a href="#" class="text-blue-500 hover:text-blue-600"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">Designed and optimized a fully normalized SQL database for a job notification platform, improving system efficiency by 40%.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">SQL</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Database Design</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Query Optimization</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-lg animate-fade-in delay-200">
+                    <div class="h-48 bg-green-100"></div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-semibold">RetailPulseAI – AWS Platform</h3>
+                            <div class="flex space-x-2">
+                                <a href="#" class="text-blue-500 hover:text-blue-600"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">Engineered a real-time data pipeline using AWS services to scrape and analyze product prices, reducing manual efforts by 80%.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">AWS</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Python</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">ETL</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-lg animate-fade-in delay-300">
+                    <div class="h-48 bg-purple-100"></div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-semibold">BookScope Search Engine</h3>
+                            <div class="flex space-x-2">
+                                <a href="#" class="text-blue-500 hover:text-blue-600"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">Developed a web application to search and filter over 65,000+ books with TF-IDF vectorization for relevance ranking.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Python</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Flask</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12 animate-fade-in delay-400">
+                <a href="https://github.com/Khyathi-inturi" target="_blank" class="inline-flex items-center text-blue-500 hover:text-blue-600 font-medium">
+                    View All Projects on GitHub
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16 animate-fade-in">Get In <span class="text-blue-500">Touch</span></h2>
+            
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-12 md:mb-0 animate-fade-in delay-100">
+                    <h3 class="text-2xl font-semibold mb-6">Contact Information</h3>
+                    <p class="text-gray-600 mb-8 max-w-md">
+                        Feel free to reach out if you're looking for a data professional, have a question, or just want to connect.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope text-blue-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Email</h4>
+                                <p class="text-gray-600">khyathivardhan18@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone-alt text-blue-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Phone</h4>
+                                <p class="text-gray-600">(216)-374-3871</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-blue-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Location</h4>
+                                <p class="text-gray-600">Cleveland, OH</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="font-semibold mb-4">Follow Me</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://github.com/Khyathi-inturi" target="_blank" class="bg-blue-100 hover:bg-blue-200 p-3 rounded-full text-blue-500 transition duration-300">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://linkedin.com/in/khyathi-inturi" target="_blank" class="bg-blue-100 hover:bg-blue-200 p-3 rounded-full text-blue-500 transition duration-300">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2 animate-fade-in delay-200">
+                    <form class="bg-white p-8 rounded-xl shadow-lg">
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Your Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="John Doe">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="john@example.com">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
+                            <input type="text" id="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Project Inquiry">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Your message here..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-3 px-6 rounded-lg transition duration-300">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="text-2xl font-bold text-white">Khyathi Vardhan Inturi</a>
+                    <p class="text-gray-400 mt-2">Transforming data into actionable insights.</p>
+                </div>
+                
+                <div class="flex flex-col md:flex-row md:space-x-12 space-y-4 md:space-y-0">
+                    <div>
+                        <h4 class="font-semibold mb-3">Quick Links</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#home" class="text-gray-400 hover:text-white transition">Home</a></li>
+                            <li><a href="#about" class="text-gray-400 hover:text-white transition">About</a></li>
+                            <li><a href="#skills" class="text-gray-400 hover:text-white transition">Skills</a></li>
+                            <li><a href="#projects" class="text-gray-400 hover:text-white transition">Projects</a></li>
+                            <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold mb-3">Connect</h4>
+                        <ul class="space-y-2">
+                            <li><a href="https://github.com/Khyathi-inturi" target="_blank" class="text-gray-400 hover:text-white transition">GitHub</a></li>
+                            <li><a href="https://linkedin.com/in/khyathi-inturi" target="_blank" class="text-gray-400 hover:text-white transition">LinkedIn</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Khyathi Vardhan Inturi. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-blue-500 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Close mobile menu if open
+                mobileMenu.classList.add('hidden');
+                
+                // Update active nav link
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.classList.remove('active-nav');
+                });
+                this.classList.add('active-nav');
+                
+                // Scroll to section
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Update active nav link on scroll
+        window.addEventListener('scroll', () => {
+            const scrollPosition = window.scrollY;
+            
+            document.querySelectorAll('section').forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    document.querySelectorAll('.nav-link').forEach(link => {
+                        link.classList.remove('active-nav');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active-nav');
+                        }
+                    });
+                }
+            });
+            
+            // Show/hide back to top button
+            const backToTopButton = document.getElementById('back-to-top');
+            if (scrollPosition > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        // Back to top functionality
+        document.getElementById('back-to-top').addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Form submission (demo purposes)
+        const contactForm = document.querySelector('form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Thank you for your message! I will get back to you soon.');
+                contactForm.reset();
+            });
+        }
+    </script>
 </body>
 </html>
